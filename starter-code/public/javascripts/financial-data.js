@@ -2,9 +2,10 @@ const getBtcValues = () => {
 
   const fromDate = document.getElementById("date1").value;
   const toDate = document.getElementById("date2").value;
+  const currency = document.getElementById("currency").value;
   
-  const url = `http://api.coindesk.com/v1/bpi/historical/close.json?start=${fromDate}&end=${toDate}`;
-
+  const url = `http://api.coindesk.com/v1/bpi/historical/close.json?start=${fromDate}&end=${toDate}&currency=${currency}`;
+console.log(currency)
   axios
     .get(url)
     .then(response => {
@@ -12,7 +13,7 @@ const getBtcValues = () => {
       const dates = Object.keys(data.bpi);
       const bitcoinValue = Object.values(data.bpi);
 
-      console.log(dates, bitcoinValue);
+      // console.log(dates, bitcoinValue);
 
       const ctx = document.getElementById("bitcoinChart").getContext("2d");
 
@@ -38,3 +39,4 @@ const getBtcValues = () => {
 getBtcValues();
 
 document.getElementById("date2").onchange = () => { getBtcValues() };
+document.getElementById("currency").onchange = () => { getBtcValues() };

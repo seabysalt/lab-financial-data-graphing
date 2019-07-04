@@ -18,14 +18,17 @@
         <input type="date" id="date2" value="2019-06-01">
       </div>
       <div class="currencyFilter">
-        <select name="currency" id="currency">
-          <option value="dollar">US Dollar ($)</option>
-          <option value="euro">Euro (€)</option>
+        <label for="currency">Currency: </label>
+        <select name="currency" id="currency" value="USD">
+          <option value="USD">US Dollar ($)</option>
+          <option value="EUR">Euro (€)</option>
        </select>
       </div>
     </div>
     <div class="values">
       <h2 class="optionshead">Values</h2>
+      <p id="max">Max: </p>
+      <p id="min">Min: </p>
     </div>
   </div>
   <div class="chart-wrapper">
